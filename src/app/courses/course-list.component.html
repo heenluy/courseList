@@ -1,0 +1,40 @@
+<h3>{{ hello }}</h3>
+
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Filter By:</label>
+
+    <div class="col-sm-10">
+        <input [(ngModel)]="filter" class="form-control">
+    </div>
+
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Código</th>
+            <th>Data</th>
+            <th>Avaliações</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let course of coursesMap'>
+            <td><img [src]="course.imageUrl" alt="logo" width="36"></td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.price }}</td>
+            <td>{{ course.code }}</td>
+            <td>{{ course.releaseDate | date: 'dd/MM/yyyy'}}</td>
+            <td>
+                <app-star [rating]="course.rate"></app-star>
+            </td>
+            <td>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

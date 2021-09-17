@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course-manager';
+
+  resume: string = 'Meu segundo contato com o Angular';
+  name: string = 'Henrique';
 }

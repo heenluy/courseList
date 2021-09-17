@@ -1,0 +1,11 @@
+.space {
+    margin-bottom: 7px;
+}
+
+form button {
+    margin-right: 7px;
+}
+
+.cursorWarn {
+    cursor: grab;
+}
